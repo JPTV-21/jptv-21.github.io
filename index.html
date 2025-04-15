@@ -5,11 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>XSMP 官网</title>
+  <link rel="icon" href="favicon.png" type="image/png">
   <style>
     :root {
       --bg-dark: #1a1a1a;
       --black-full: #000000;
       --accent: #007aff;
+      --card-bg: #007aff;
+      --card-text-color: white;
+      --card-glow-color: #00c6ff;
+      --card-glow-intensity: 0.5;
+      --card-btn-size: 14px 30px;
+      --card-btn-radius: 999px;
     }
 
     * {
@@ -24,10 +31,13 @@
       color: white;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       scroll-behavior: smooth;
+      height: auto;
+      overflow-y: auto;
     }
 
     body {
       padding-bottom: 100px;
+      min-height: 100vh;
     }
 
     nav {
@@ -63,6 +73,7 @@
       position: relative;
       padding-top: 100px;
       text-align: center;
+      min-height: calc(100vh - 140px);
     }
 
     section {
@@ -76,6 +87,7 @@
       transform: scale(0.98);
       transition: opacity 0.5s ease, transform 0.5s ease;
       pointer-events: none;
+      height: auto;
     }
 
     section.active {
@@ -125,12 +137,11 @@
     a.cta-button {
       position: absolute;
       left: 50%;
-      top: 800px;
       transform: translateX(-50%);
-      padding: var(--btn-size, 14px 30px);
-      background: var(--btn-bg, #007aff);
-      border-radius: var(--btn-radius, 999px);
-      color: var(--text-color, white);
+      padding: var(--card-btn-size);
+      background: var(--card-bg);
+      border-radius: var(--card-btn-radius);
+      color: var(--card-text-color);
       font-size: 18px;
       font-weight: 600;
       cursor: pointer;
@@ -138,8 +149,8 @@
       text-align: center;
       display: inline-block;
       transition: all 0.3s ease;
-      --glow-color: var(--btn-glow-color, #00c6ff);
-      --glow-intensity: var(--btn-glow-intensity, 0.5);
+      --glow-color: var(--card-glow-color);
+      --glow-intensity: var(--card-glow-intensity);
     }
 
     a.cta-button:hover {
@@ -176,6 +187,12 @@
         margin: 30px auto;
         transform: none !important;
       }
+
+      a.cta-button {
+        position: relative;
+        margin: 20px auto;
+        transform: none;
+      }
     }
   </style>
 </head>
@@ -196,7 +213,6 @@
   </nav>
 
   <div class="content">
-    <!-- 首页 -->
     <section id="home">
       <h1 style="font-size: 48px; color: #ffffff; text-shadow: 0 0 20px rgba(0,122,255,0.8); margin-top: 100px;">
         XSMP
@@ -218,104 +234,52 @@
         <div class="card-text" style="color: #ffffff; text-shadow: 0 0 10px rgba(0, 122, 255);">管理不神权</div>
       </div>
     </section>
-
-    <!-- 关于页 -->
+    
     <section id="about">
       <h1 style="font-size: 48px; color: #00ff88; text-shadow: 0 0 20px rgba(0,255,136,0.8); margin-top: 100px;">
         关于
       </h1>
 
-      <p style="font-size: 20px;
-               color: #aaaaaa;
-               position: absolute;
-               top: 300px;
-               width: 100%;
-               text-align: center;">
+      <p style="font-size: 20px; color: #aaaaaa; position: absolute; top: 300px; width: 100%; text-align: center;">
         2024年7月，服主 Wind_Blood 为他所处的某无政府服务器的组织 弃世会 建立了一个未命名的服务器，并邀请组织成员来玩。
       </p>
       
-      <p style="font-size: 20px;
-               color: #aaaaaa;
-               position: absolute;
-               top: 350px;
-               width: 100%;
-               text-align: center;">
+      <p style="font-size: 20px; color: #aaaaaa; position: absolute; top: 350px; width: 100%; text-align: center;">
         有一天，服主发现了 Lifesteal SMP 这个系列，并对这种玩法十分感兴趣。他将 弃世会 私服改为了 Lifesteal 玩法，并在某 Minecraft 交流群上公开了它。
       </p>
       
-      <p style="font-size: 20px;
-               color: #aaaaaa;
-               position: absolute;
-               top: 400px;
-               width: 100%;
-               text-align: center;">
+      <p style="font-size: 20px; color: #aaaaaa; position: absolute; top: 400px; width: 100%; text-align: center;">
         服务器因为某位乐子小学生 tomato ，群里来了很多人看猴，其中也有很多真正想玩这个服务器的人。
       </p>
       
-      <p style="font-size: 20px;
-               color: #aaaaaa;
-               position: absolute;
-               top: 450px;
-               width: 100%;
-               text-align: center;">
+      <p style="font-size: 20px; color: #aaaaaa; position: absolute; top: 450px; width: 100%; text-align: center;">
         原本该服命名为 LifestealX SMP，为了让服名好记一点，改名为了今天的 XSMP。
       </p>
       
-      <p style="font-size: 20px;
-               color: #aaaaaa;
-               position: absolute;
-               top: 500px;
-               width: 100%;
-               text-align: center;">
+      <p style="font-size: 20px; color: #aaaaaa; position: absolute; top: 500px; width: 100%; text-align: center;">
         就这样，XSMP 的玩家逐渐变多，服主迅速挑选了一些玩家，建立起了一个尽职的管理组。
       </p>
       
-      <p style="font-size: 20px;
-               color: #aaaaaa;
-               position: absolute;
-               top: 550px;
-               width: 100%;
-               text-align: center;">
+      <p style="font-size: 20px; color: #aaaaaa; position: absolute; top: 550px; width: 100%; text-align: center;">
         XSMP 和当时服主在宣传群里发的宣传内容一样，没有跑路，也没有跑路的打算，就算在日活为0的今天 (2025/4/12) 也还是挺立着。
       </p>
       
-      <p style="font-size: 20px;
-               color: #aaaaaa;
-               position: absolute;
-               top: 600px;
-               width: 100%;
-               text-align: center;">
+      <p style="font-size: 20px; color: #aaaaaa; position: absolute; top: 600px; width: 100%; text-align: center;">
         不管现在服务器日活多不多，如果你在找一个 死亡不掉落 、 管理尽职尽责不神权 、 稳定不跑路 的生存服务器的话，
       </p>
       
-      <p style="font-size: 18px;
-               color: #aaaaaa;
-               position: absolute;
-               top: 650px;
-               width: 100%;
-               text-align: center;">
+      <p style="font-size: 18px; color: #aaaaaa; position: absolute; top: 650px; width: 100%; text-align: center;">
         ......
       </p>
       
-      <p style="font-size: 20px;
-               color: #ffffff;
-               position: absolute;
-               top: 700px;
-               width: 100%;
-               text-shadow: 0 0 15px rgba(0,255,136,1.0);
-               text-align: center;">
+      <p style="font-size: 20px; color: #ffffff; position: absolute; top: 700px; width: 100%; text-shadow: 0 0 15px rgba(0,255,136,1.0); text-align: center;">
         考虑一下 XSMP ?
       </p>
 
       <a href="https://qm.qq.com/q/PqSVUT6wAa"
          class="cta-button"
          role="button"
-         style="--btn-bg: #5eacff;
-                --btn-size: 14px 30px;
-                --btn-glow-color: #00c6ff;
-                --btn-glow-intensity: 0.3;
-                --btn-radius: 999px;
-                --text-color: rgb(0, 0, 0);">
+         style="top: 800px; --card-bg: #5eacff; --card-glow-color: #00c6ff; --card-glow-intensity: 0.3; --card-text-color: rgb(0, 0, 0);">
         加入 XSMP 的 QQ群
       </a>
     </section>
@@ -348,13 +312,7 @@
       <a href="https://www.minebbs.com/resources/xgamemode.11041/"
          class="cta-button"
          role="button"
-         style="--btn-bg: #5eacff;
-                --btn-size: 14px 30px;
-                --btn-glow-color: #ff8648;
-                --btn-glow-intensity: 0.3;
-                --btn-radius: 999px;
-                --text-color: rgb(0, 0, 0);
-                top: 850px">
+         style="top: 850px; --card-bg: #5eacff; --card-glow-color: #ff8648; --card-glow-intensity: 0.3; --card-text-color: rgb(0, 0, 0);">
         前往 MineBBS 查看 XGamemode
       </a>
     </section>
@@ -376,6 +334,11 @@
       oldSection.classList.remove('active');
       newSection.classList.add('active');
 
+      const content = document.querySelector('.content');
+      const activeSection = newSection;
+      const sectionHeight = activeSection.scrollHeight;
+      content.style.minHeight = `${sectionHeight + 100}px`;
+
       currentPage = pageId;
     }
 
@@ -383,6 +346,9 @@
       const home = document.getElementById("home");
       requestAnimationFrame(() => {
         home.classList.add("active");
+        const content = document.querySelector('.content');
+        const sectionHeight = home.scrollHeight;
+        content.style.minHeight = `${sectionHeight + 100}px`;
       });
     });
   </script>
