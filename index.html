@@ -1,4 +1,4 @@
-<!-- XSite by Wind_Blood 保留所有权利 -->
+<!-- XSite V1.8 by Wind_Blood -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -11,12 +11,12 @@
       --bg-dark: #1a1a1a;
       --black-full: #000000;
       --accent: #007aff;
-      --card-bg: #007aff;
-      --card-text-color: white;
-      --card-glow-color: #00c6ff;
-      --card-glow-intensity: 0.5;
-      --card-btn-size: 14px 30px;
-      --card-btn-radius: 999px;
+      --cta-bg: #007aff;
+      --cta-text-color: white;
+      --cta-glow-color: #00c6ff;
+      --cta-glow-intensity: 0.5;
+      --cta-btn-size: 14px 30px;
+      --cta-btn-radius: 999px;
     }
     * { box-sizing: border-box; user-select: none; margin: 0; padding: 0;}
     body {
@@ -24,6 +24,7 @@
       color: white;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       overflow-x: hidden;
+      min-height: 100vh;
     }
     nav {
       background: var(--black-full);
@@ -50,6 +51,10 @@
     nav a:active {
       transform: scale(0.95);
     }
+    #container {
+      position: relative;
+      min-height: 100vh;
+    }
     section {
       min-height: calc(100vh - 140px);
       padding: 120px 20px 60px;
@@ -62,6 +67,9 @@
       top: 0;
       left: 0;
       pointer-events: none;
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     section.active {
       opacity: 1;
@@ -78,6 +86,7 @@
     p {
       margin-top: 20px;
       font-size: 20px;
+      text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
       color: #aaaaaa;
     }
     .cards {
@@ -113,10 +122,10 @@
     a.cta-button {
       display: inline-block;
       margin-top: 40px;
-      padding: var(--card-btn-size);
-      background: var(--card-bg);
-      border-radius: var(--card-btn-radius);
-      color: var(--card-text-color);
+      padding: var(--cta-btn-size);
+      background: var(--cta-bg);
+      border-radius: var(--cta-btn-radius);
+      color: var(--cta-text-color);
       font-size: 18px;
       font-weight: bold;
       text-decoration: none;
@@ -124,19 +133,34 @@
     }
     a.cta-button:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 15px var(--card-glow-color);
+      box-shadow: 0 0 15px var(--cta-glow-color);
     }
     a.cta-button:active {
       transform: scale(0.95);
     }
+    .image-box {
+      width: 300px;
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      margin: 30px auto;
+      display: block;
+      transition: transform 0.3s ease, box-shadow 0.15s ease;
+      cursor: pointer;
+    }
+    .image-box:hover {
+      transform: scale(1.05);
+    }
+    .image-box:active {
+      transform: scale(0.95);
+    }
     footer {
       background: var(--black-full);
-      padding: 20px;
+      padding: 30px;
       text-align: center;
-      font-size: 14px;
+      font-size: 12px;
       color: #00ff88;
-      text-shadow: 0 0 5px rgba(255,255,255,0.8);
-      margin-top: 100px;
+      text-shadow: 0 0 5px rgb(0, 0, 0);
     }
     @media (max-width: 768px) {
       h1 { font-size: 36px; }
@@ -149,17 +173,16 @@
 <body>
 
 <nav>
-  <a href="javascript:void(0)" onclick="switchPage('home')">首页</a>
+  <a href="javascript:void(0)" onclick="switchPage('home')" style="background: rgba(0,122,255,0.2);">首页</a>
   <a href="javascript:void(0)" onclick="switchPage('about')">关于</a>
   <a href="javascript:void(0)" onclick="switchPage('plugins')">插件</a>
 </nav>
 
 <div id="container">
 
-  <section id="home">
+  <section id="home" data-bg="Minecraft.png">
     <h1>XSMP</h1>
     <p>公益的中国大陆 Lifesteal 服务器。</p>
-    <p>官网测试中，可能有部分内容缺失，将在之后补充。Using XSite V1.7</p>
     <div class="cards">
       <div class="card" style="box-shadow: 0 0 20px rgb(255, 68, 68);">
         <div class="card-text" style="color:white; text-shadow: 0 0 10px rgb(255,68,68);">死亡不掉落</div>
@@ -171,9 +194,11 @@
         <div class="card-text" style="color:white; text-shadow: 0 0 10px rgba(0,122,255,1.0);">管理不神权</div>
       </div>
     </div>
+    <img src="favicon.png" alt="演示图" class="image-box">
+    <img src="test.png" alt="演示图" class="image-box">
   </section>
 
-  <section id="about">
+  <section id="about" data-bg="">
     <h1 style="color:#00ff88; text-shadow:0 0 20px rgba(0,255,136,0.8);">关于</h1>
     <p>2024年7月，服主 Wind_Blood 为他所处的某无政府服务器的组织 弃世会 建立了一个未命名的服务器，并邀请组织成员来玩。</p>
     <p>一天，服主发现了 Lifesteal SMP 这个系列，并对这种玩法十分感兴趣。他将 弃世会 私服改为了 Lifesteal 玩法，并在某 Minecraft 交流群上公开了它。</p>
@@ -183,34 +208,68 @@
     <p>XSMP 和当时服主在宣传群里发的宣传内容一样，没有跑路，也没有跑路的打算，就算在日活为0的今天 (2025/4/12) 也还是挺立着。</p>
     <p>不管现在服务器日活多不多，如果你在找一个 死亡不掉落、管理尽职尽责不神权、稳定不跑路 的生存服务器的话，</p>
     <p style="font-size:22px; color:white; text-shadow:0 0 15px rgba(0,255,136,1.0);">考虑一下 XSMP ?</p>
-    <a href="https://qm.qq.com/q/PqSVUT6wAa" class="cta-button" style="--card-bg:#5eacff;--card-glow-color:#00c6ff;--card-text-color:black;">加入 QQ群</a>
+    <a href="https://qm.qq.com/q/PqSVUT6wAa" class="cta-button" style="--cta-bg:#5eacff;--cta-glow-color:#00c6ff;--cta-text-color:black;">加入 QQ群</a>
   </section>
 
-  <section id="plugins">
+  <section id="plugins" data-bg="test.png">
     <h1 style="color:white; text-shadow:0 0 20px rgba(255,68,0,0.8);">自研插件</h1>
     <p>目前就 XGamemode 一个。</p>
-    <a href="https://www.minebbs.com/resources/xgamemode.11041/" class="cta-button" style="--card-bg:#5eacff;--card-glow-color:#ff8648;--card-text-color:black;">前往 MineBBS 查看</a>
+    <a href="https://www.minebbs.com/resources/xgamemode.11041/" class="cta-button" style="--cta-bg:#5eacff;--cta-glow-color:#ff8648;--cta-text-color:black;">前往 MineBBS 查看</a>
   </section>
 
 </div>
 
 <footer>
-  <p>© 2025 半生风血 - Powered by XSite - XSMP 官网</p>
+  <p style="color:#007aff">© 2025 半生风血 - Powered by XSite - XSMP 官网</p>
 </footer>
 
 <script>
-let currentPage = 'home';
-function switchPage(pageId) {
-  if (pageId === currentPage) return;
-  document.getElementById(currentPage).classList.remove('active');
-  document.getElementById(pageId).classList.add('active');
-  window.scrollTo(0, 0);
-  currentPage = pageId;
-}
-window.addEventListener('DOMContentLoaded', () => {
-  document.getElementById(currentPage).classList.add('active');
-});
-</script>
+  let currentPage = 'home';
+  let isSwitching = false;
+  
+  function setBackground(sectionId) {
+    const section = document.getElementById(sectionId);
+    const bg = section.dataset.bg;
+    if (bg) {
+      section.style.backgroundImage = `url(${bg})`;
+    } else {
+      section.style.backgroundImage = 'none';
+    }
+  }
+  
+  function switchPage(pageId) {
+    if (pageId === currentPage || isSwitching) return;
+    
+    isSwitching = true;
+    const currentSection = document.getElementById(currentPage);
+    const newSection = document.getElementById(pageId);
+    
+    const scrollY = window.scrollY;
+    
+    currentSection.classList.remove('active');
+    
+    newSection.classList.add('active');
+    setBackground(pageId);
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+    currentPage = pageId;
+    isSwitching = false;
+  }
+  
+  window.addEventListener('DOMContentLoaded', () => {
+    requestAnimationFrame(() => {
+      document.getElementById(currentPage).classList.add('active');
+      setBackground(currentPage);
+      document.body.style.paddingTop = document.querySelector('nav').offsetHeight + 'px';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+  
+  window.addEventListener('load', () => {
+    document.body.style.overflow = 'auto';
+  });
+</script>   
 
 </body>
 </html>
