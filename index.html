@@ -1,4 +1,4 @@
-<!-- XSite V1.8 by Wind_Blood -->
+<!-- XSite V1.9 by Wind_Blood -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -7,27 +7,21 @@
   <title>XSMP 官网</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <style>
-    :root {
-      --bg-dark: #1a1a1a;
-      --black-full: #000000;
-      --accent: #007aff;
-      --cta-bg: #007aff;
-      --cta-text-color: white;
-      --cta-glow-color: #00c6ff;
-      --cta-glow-intensity: 0.5;
-      --cta-btn-size: 14px 30px;
-      --cta-btn-radius: 999px;
+    * { 
+      box-sizing: border-box; 
+      user-select: none; 
+      margin: 0; 
+      padding: 0;
     }
-    * { box-sizing: border-box; user-select: none; margin: 0; padding: 0;}
     body {
-      background: var(--bg-dark);
+      background: #1a1a1a;
       color: white;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       overflow-x: hidden;
       min-height: 100vh;
     }
     nav {
-      background: var(--black-full);
+      background: #000000;
       padding: 20px 0;
       text-align: center;
       position: fixed;
@@ -46,7 +40,7 @@
       display: inline-block;
     }
     nav a:hover {
-      background-color: var(--accent);
+      background-color: #007aff;
     }
     nav a:active {
       transform: scale(0.95);
@@ -67,7 +61,7 @@
       top: 0;
       left: 0;
       pointer-events: none;
-      background-size: 100% 100%;
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
@@ -80,7 +74,6 @@
     }
     h1 {
       font-size: 48px;
-      text-shadow: 0 0 20px rgba(0,122,255,0.8);
       margin-bottom: 20px;
     }
     p {
@@ -122,10 +115,10 @@
     a.cta-button {
       display: inline-block;
       margin-top: 40px;
-      padding: var(--cta-btn-size);
-      background: var(--cta-bg);
-      border-radius: var(--cta-btn-radius);
-      color: var(--cta-text-color);
+      padding: 14px 30px;
+      background: #007aff;
+      border-radius: 999px;
+      color: white;
       font-size: 18px;
       font-weight: bold;
       text-decoration: none;
@@ -133,12 +126,12 @@
     }
     a.cta-button:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 15px var(--cta-glow-color);
+      box-shadow: 0 0 15px #00c6ff;
     }
     a.cta-button:active {
       transform: scale(0.95);
     }
-    .image-box {
+    .image {
       width: 300px;
       max-width: 90%;
       border-radius: 20px;
@@ -148,18 +141,17 @@
       transition: transform 0.3s ease, box-shadow 0.15s ease;
       cursor: pointer;
     }
-    .image-box:hover {
+    .image:hover {
       transform: scale(1.05);
     }
-    .image-box:active {
+    .image:active {
       transform: scale(0.95);
     }
     footer {
-      background: var(--black-full);
-      padding: 30px;
+      background: #000000;
+      padding: 20px;
       text-align: center;
-      font-size: 12px;
-      color: #00ff88;
+      color: #aaaaaa;
       text-shadow: 0 0 5px rgb(0, 0, 0);
     }
     @media (max-width: 768px) {
@@ -180,8 +172,8 @@
 
 <div id="container">
 
-  <section id="home" data-bg="Minecraft.png">
-    <h1>XSMP</h1>
+  <section id="home" data-bg="Minecraft.png" data-bg-color="#000000">
+    <h1 style="text-shadow:0 0 20px rgba(0,122,255,0.8);">XSMP</h1>
     <p>公益的中国大陆 Lifesteal 服务器。</p>
     <div class="cards">
       <div class="card" style="box-shadow: 0 0 20px rgb(255, 68, 68);">
@@ -190,16 +182,16 @@
       <div class="card" style="box-shadow: 0 0 20px rgb(0,255,110);">
         <div class="card-text" style="color:white; text-shadow: 0 0 10px rgb(0,255,110);">稳定不跑路</div>
       </div>
-      <div class="card" style="box-shadow: 0 0 20px rgba(0,122,255,1.0);">
-        <div class="card-text" style="color:white; text-shadow: 0 0 10px rgba(0,122,255,1.0);">管理不神权</div>
+      <div class="card" style="box-shadow: 0 0 20px rgb(0,122,255,1.0);">
+        <div class="card-text" style="color:white; text-shadow: 0 0 10px rgb(0,122,255,1.0);">管理不神权</div>
       </div>
     </div>
-    <img src="favicon.png" alt="演示图" class="image-box">
-    <img src="test.png" alt="演示图" class="image-box">
+    <img class="image" src="favicon.png" alt="演示图1">
+    <img class="image" src="test.png" alt="演示图2">
   </section>
 
-  <section id="about" data-bg="">
-    <h1 style="color:#00ff88; text-shadow:0 0 20px rgba(0,255,136,0.8);">关于</h1>
+  <section id="about" data-bg="" data-bg-color="">
+    <h1 style="text-shadow:0 0 20px rgba(0,255,136,0.8);">关于</h1>
     <p>2024年7月，服主 Wind_Blood 为他所处的某无政府服务器的组织 弃世会 建立了一个未命名的服务器，并邀请组织成员来玩。</p>
     <p>一天，服主发现了 Lifesteal SMP 这个系列，并对这种玩法十分感兴趣。他将 弃世会 私服改为了 Lifesteal 玩法，并在某 Minecraft 交流群上公开了它。</p>
     <p>服务器因为某位乐子小学生 tomato ，群里来了很多人看猴，其中也有很多真正想玩这个服务器的人。</p>
@@ -211,7 +203,7 @@
     <a href="https://qm.qq.com/q/PqSVUT6wAa" class="cta-button" style="--cta-bg:#5eacff;--cta-glow-color:#00c6ff;--cta-text-color:black;">加入 QQ群</a>
   </section>
 
-  <section id="plugins" data-bg="test.png">
+  <section id="plugins" data-bg="test.png" data-bg-color="">
     <h1 style="color:white; text-shadow:0 0 20px rgba(255,68,0,0.8);">自研插件</h1>
     <p>目前就 XGamemode 一个。</p>
     <a href="https://www.minebbs.com/resources/xgamemode.11041/" class="cta-button" style="--cta-bg:#5eacff;--cta-glow-color:#ff8648;--cta-text-color:black;">前往 MineBBS 查看</a>
@@ -220,16 +212,25 @@
 </div>
 
 <footer>
-  <p style="color:#007aff">© 2025 半生风血 - Powered by XSite - XSMP 官网</p>
+  <p style="font-size: 15px">© 2025 半生风血 - Powered by XSite - XSMP 官网</p>
 </footer>
 
 <script>
+  window.history.scrollRestoration = 'manual';
   let currentPage = 'home';
   let isSwitching = false;
   
   function setBackground(sectionId) {
     const section = document.getElementById(sectionId);
     const bg = section.dataset.bg;
+    const bgColor = section.dataset.bgColor;
+
+    if (bgColor) {
+      document.body.style.backgroundColor = bgColor;
+    } else {
+      document.body.style.backgroundColor = '#1a1a1a';
+    }
+
     if (bg) {
       section.style.backgroundImage = `url(${bg})`;
     } else {
@@ -262,7 +263,7 @@
       document.getElementById(currentPage).classList.add('active');
       setBackground(currentPage);
       document.body.style.paddingTop = document.querySelector('nav').offsetHeight + 'px';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0 });
     });
   });
   
